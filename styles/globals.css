@@ -1,3 +1,19 @@
+:root {
+  --blue: rgba(57, 55, 146, 1);
+  --blue-trans: rgba(57, 55, 146, 0.85);
+  --pink: rgba(226, 126, 187, 1);
+  --off-white: rgba(245, 245, 243, 1);
+  --off-white-trans: rgba(245, 245, 243, 0.6);
+  --dark-overlay: rgba(0, 0, 0, 0.4);
+
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+
+  --font-size-sm: 1rem;
+  --font-size-md: 1.3rem;
+  --font-size-lg: 1.5rem;
+}
 html,
 body {
   padding: 0;

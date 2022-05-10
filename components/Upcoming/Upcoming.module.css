@@ -1,0 +1,43 @@
+.container {
+  width: 100%;
+  height: 100vh;
+}
+
+.container__bg {
+  background: url("../../public/girl.jpg") no-repeat top center;
+  background-blend-mode: multiply;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-size: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+  text-align: right;
+}
+.container__bg::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: var(--dark-overlay);
+}
+.transbox {
+  position: relative;
+  text-align: right;
+  opacity: 1;
+  padding-right: var(--space-lg);
+  font-size: var(--font-size-md);
+  color: var(--off-white);
+}
+.transbox__bg {
+  background-color: var(--blue-trans);
+  background-size: contain;
+  padding: var(--space-sm);
+}
+.transbox h1 {
+  display: inline-block;
+  position: relative;
+}
+.transbox li {
+  display: inline-block;
+}

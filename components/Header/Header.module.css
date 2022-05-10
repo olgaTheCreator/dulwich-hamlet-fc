@@ -1,0 +1,10 @@
+.Header {
+  width: 100%;
+  display: flex;
+}
+.logo {
+  width: 8rem;
+  height: 8rem;
+  position: fixed;
+  z-index: 10;
+}
