@@ -1,5 +1,6 @@
 import Logo from "../../assets/logos/dulwichhamletlogo.svg";
 import styles from "./Header.module.css";
+import { ChevronDownIcon } from "@heroicons/react/outline";
 
 const Header = () => {
   // fetch("https://v3.football.api-sports.io/teams?search=chelsea", {
@@ -21,13 +22,8 @@ const Header = () => {
       <div className={styles.logo}>
         <Logo />
       </div>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
+      <h1>WOMEN FIRST XI</h1>
+      <ChevronDownIcon className={styles.header__icon} />
     </header>
   );
 };

@@ -7,18 +7,27 @@ const Upcoming = () => {
       <div className={styles.container__bg}>
         <Header />
         <div className={styles.transbox}>
-          <h1 className={styles.transbox__bg}>
-            UPCOMING <br />
-            MATCHES:
-          </h1>
-
-          <ul>
-            <li className={styles.transbox__bg}>h</li>
-            <li className={styles.transbox__bg}>g</li>
-            <li className={styles.transbox__bg}>f</li>
-            <li className={styles.transbox__bg}>f</li>
-            <li className={styles.transbox__bg}>f</li>
-          </ul>
+          <h1 className={styles.transbox__bg}>WATCH US PLAY:</h1>
+          <div>
+            <p className={styles.transbox__date}>27TH MAY</p>
+            <p className={styles.transbox__place}>VS AYLESFORD</p>
+          </div>
+          <div>
+            <p className={styles.transbox__date}>29TH MAY </p>
+            <p className={styles.transbox__place}>VS NEW LONDON LIONESSES</p>
+          </div>
+          <div>
+            <p className={styles.transbox__date}>1ST JUNE </p>
+            <p className={styles.transbox__place}> VS FULHAM WOMEN FC</p>
+          </div>
+          <div>
+            <p className={styles.transbox__date}>15TH JUNE </p>
+            <p className={styles.transbox__place}> VS WORTHING</p>
+          </div>
+          <div>
+            <p className={styles.transbox__date}>18TH JULY </p>
+            <p className={styles.transbox__place}> VS AYLESFORD</p>
+          </div>
         </div>
       </div>
     </div>
