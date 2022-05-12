@@ -9,8 +9,11 @@ const Upcoming = () => {
         <div className={styles.transbox}>
           <h1 className={styles.transbox__bg}>WATCH US PLAY:</h1>
           <div>
-            <p className={styles.transbox__date}>27TH MAY</p>
-            <p className={styles.transbox__place}>VS AYLESFORD</p>
+            <p className={styles.transbox__try}>APRIL</p>
+            <p className={styles.transbox__try}>SUNDAY 9TH</p>
+            <p className={styles.transbox__try}>3.00 PM</p>
+
+            <p className={styles.transbox__try}>VS AYLESFORD</p>
           </div>
           <div>
             <p className={styles.transbox__date}>29TH MAY </p>
