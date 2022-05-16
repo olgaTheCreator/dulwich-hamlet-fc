@@ -38,7 +38,7 @@
   position: relative;
   padding-left: var(--space-md);
   margin-left: var(--space-md);
-  margin-top: 11rem;
+  margin-top: 8rem;
 }
 
 .transbox div {
@@ -47,18 +47,27 @@
   row-gap: 0.1rem;
   flex-direction: column;
   align-items: center;
-  font-size: var(--font-size-xlg);
+  font-size: var(--font-size-lg);
   text-align: center;
 
-  margin-top: var(--space-md);
+  margin-top: var(--space-sm);
   margin-left: 10%;
 }
-.transbox__try {
+.transbox__text {
   background-color: var(--blue-trans);
   display: inline-block;
   box-shadow: 0 0.1rem 0 var(--blue-trans);
   margin: 0 0;
   padding: 0.2em 0.8em;
+}
+
+.transbox__text--bold {
+  background-color: var(--blue-trans);
+  display: inline-block;
+  box-shadow: 0 0.1rem 0 var(--blue-trans);
+  margin: 0 0;
+  padding: 0.15em 0.8em;
+  font-weight: 900;
 }
 
 .transbox__date {

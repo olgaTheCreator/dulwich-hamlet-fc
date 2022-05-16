@@ -2,19 +2,20 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Header from "../components/Header/Header";
 import Upcoming from "../components/Upcoming/Upcoming";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
-const Home = () => {
-  const [offsetY, setOffsetY] = useState(0);
-  const handleScroll = () => setOffsetY(window.pageYOffset);
+const Home: NextPage = () => {
+  // const [offsetY, setOffsetY] = useState(0);
+  // const handleScroll = () => setOffsetY(window.pageYOffset);
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
   return (
     <div className={styles.container}>
       <Head>
@@ -35,3 +36,12 @@ const Home = () => {
 };
 
 export default Home;
+
+// export async function getStaticProps() {
+//   const res = await fetch("../assets/data/upcomingMatches.json");
+//   const data = await res.json();
+
+//   return {
+//     props: { matches: data }, // will be passed to the page component as props
+//   };
+// }
