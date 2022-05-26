@@ -19,18 +19,41 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Dulwich Helmet FC</title>
+        <title>Dulwich Hamlet FC</title>
         <meta
           name="description"
           content="Practice page made by olgaTheCreator"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Upcoming />
+      <Header />
+      <Parallax pages={4}>
+        {/* <ParallaxLayer offset={1.2} speed={0.4}>
+          <div className={styles["background--gradient"]}></div>
+        </ParallaxLayer> */}
+        <ParallaxLayer factor={1} speed={0.2}>
+          <div className={styles["background--pink"]}></div>
+        </ParallaxLayer>
+        <ParallaxLayer factor={1.5} speed={0.2}>
+          <div className={styles["image-container"]}>
+            <Image
+              src="/../public/g9667.png"
+              alt="player holding a ball"
+              layout="fill"
+              objectFit="contain"
+              objectPosition="top left"
+              quality={100}
+            />
+          </div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={2} factor={2} speed={0.6}>
+          <Upcoming />
+        </ParallaxLayer>
+      </Parallax>
 
-      <main className={styles.main}></main>
+      {/* <main className={styles.main}></main>
 
-      <footer className={styles.footer}></footer>
+      <footer className={styles.footer}></footer> */}
     </div>
   );
 };

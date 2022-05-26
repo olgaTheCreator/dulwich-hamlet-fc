@@ -114,3 +114,43 @@
     flex-direction: column;
   }
 }
+
+.background--pink {
+  background-color: var(--pink);
+  max-width: 100vw;
+  height: 150vh;
+  background-size: cover;
+}
+.image-container {
+  position: relative;
+  width: 120vw;
+  min-height: 110vh;
+  display: block;
+  margin-left: var(--space-sm);
+  margin-top: 3rem;
+}
+.background--photo {
+  background: url("../public/girl.jpg") no-repeat top center;
+  background-blend-mode: multiply;
+  max-width: 100vw;
+  min-height: 100vh;
+  background-size: cover;
+}
+.background--photo::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: var(--dark-overlay);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+}
+.background--gradient {
+  height: 400vh;
+  background: linear-gradient(
+    to bottom,
+    hsl(323, 63%, 69%),
+    hsl(241, 45%, 39%)
+  );
+}
