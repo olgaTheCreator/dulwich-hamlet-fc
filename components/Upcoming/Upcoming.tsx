@@ -1,6 +1,4 @@
-import Header from "../Header/Header";
 import styles from "./Upcoming.module.css";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 const Upcoming = () => {
   return (

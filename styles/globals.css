@@ -5,6 +5,7 @@
   --off-white: rgba(245, 245, 243, 1);
   --off-white-trans: rgba(245, 245, 243, 0.6);
   --dark-overlay: rgba(0, 0, 0, 0.4);
+  --soft-cyan: rgba(126, 226, 190, 1);
 
   --space-sm: 0.5rem;
   --space-md: 1rem;
@@ -15,6 +16,27 @@
   --font-size-md: 1.3rem;
   --font-size-lg: 1.5rem;
   --font-size-xlg: 2rem;
+}
+html {
+  font-size: 118.75%;
+}
+
+@media screen and (min-width: 30em) {
+  html {
+    font-size: 125%;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  html {
+    font-size: 150%;
+  }
+}
+
+@media screen and (min-width: 90em) {
+  html {
+    font-size: 175%;
+  }
 }
 html,
 body {

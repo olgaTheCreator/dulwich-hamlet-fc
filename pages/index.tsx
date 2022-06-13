@@ -5,7 +5,10 @@ import styles from "../styles/Home.module.css";
 import { useState, useEffect, useRef } from "react";
 import Header from "../components/Header/Header";
 import Upcoming from "../components/Upcoming/Upcoming";
+import Girl from "../public/girl.svg";
+import WatchUsPlay from "../assets/svgs/watch_us_play_poly.svg";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import { ChevronDownIcon } from "@heroicons/react/outline";
 
 const Home: NextPage = () => {
   // const [offsetY, setOffsetY] = useState(0);
@@ -26,27 +29,50 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
+
       <Parallax pages={4}>
-        {/* <ParallaxLayer offset={1.2} speed={0.4}>
-          <div className={styles["background--gradient"]}></div>
-        </ParallaxLayer> */}
-        <ParallaxLayer factor={1} speed={0.2}>
+        <ParallaxLayer offset={0} speed={0.1}>
           <div className={styles["background--pink"]}></div>
         </ParallaxLayer>
-        <ParallaxLayer factor={1.5} speed={0.2}>
-          <div className={styles["image-container"]}>
-            <Image
-              src="/../public/g9667.png"
+        <ParallaxLayer speed={0.4}>
+          <Header />
+        </ParallaxLayer>
+        <ParallaxLayer sticky={{ start: 0.2, end: 2.7 }}>
+          <ChevronDownIcon className={styles["chevron-down-icon__blue"]} />
+        </ParallaxLayer>
+        <ParallaxLayer offset={0.3}>
+          <div className={styles["scroll-down-p"]}>
+            Scroll
+            <br />
+            down
+          </div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0.22} speed={0.6}>
+          <div className={styles["image-container--girl"]}>
+            <Girl />
+            {/* <Image
+              src="/../public/girl.svg"
               alt="player holding a ball"
               layout="fill"
               objectFit="contain"
               objectPosition="top left"
               quality={100}
-            />
+            /> */}
           </div>
         </ParallaxLayer>
-        <ParallaxLayer offset={2} factor={2} speed={0.6}>
+        {/* <ParallaxLayer offset={1} speed={1}>
+          <div className={styles["background--white"]}></div>
+        </ParallaxLayer> */}
+        {/* <ParallaxLayer sticky={{ start: 1, end: 1.7 }}>
+          <ChevronDownIcon className={styles["chevron-down-icon__blue"]} />
+        </ParallaxLayer> */}
+        <ParallaxLayer offset={1.1} speed={0.8}>
+          <div className={styles["image-container--watch-us"]}>
+            <WatchUsPlay />
+          </div>
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={3} factor={2} speed={0.6}>
           <Upcoming />
         </ParallaxLayer>
       </Parallax>

@@ -118,16 +118,32 @@
 .background--pink {
   background-color: var(--pink);
   max-width: 100vw;
+  height: 100vh;
+  background-size: cover;
+}
+
+.background--white {
+  background-color: var(--off-white);
+  max-width: 100vw;
   height: 150vh;
   background-size: cover;
 }
-.image-container {
+.image-container--girl {
   position: relative;
   width: 120vw;
-  min-height: 110vh;
+  max-width: 1500px;
+
+  display: block;
+
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+.image-container--watch-us {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
   display: block;
   margin-left: var(--space-sm);
-  margin-top: 3rem;
 }
 .background--photo {
   background: url("../public/girl.jpg") no-repeat top center;
@@ -153,4 +169,34 @@
     hsl(323, 63%, 69%),
     hsl(241, 45%, 39%)
   );
+}
+
+.chevron-down-icon__off-white {
+  float: right;
+  width: 4rem;
+  height: 4rem;
+  margin: 0.1em 0.1em 0 0;
+  color: var(--off-white);
+  filter: drop-shadow(0.07em 0.07em 0.1em rgba(0, 0, 0, 0.4));
+}
+
+.chevron-down-icon__blue {
+  float: right;
+  width: 4rem;
+  height: 4rem;
+  margin: 0.1em 0.1em 0 0;
+  color: var(--blue);
+  filter: drop-shadow(0.07em 0.07em 0.1em rgba(0, 0, 0, 0.4));
+}
+
+.scroll-down-p {
+  margin: 0 var(--space-sm);
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-shadow: 0.1em 0.1em 0 rgba(0, 0, 0, 0.4);
+  text-align: right;
+  float: right;
+  color: var(--off-white);
+  position: relative;
 }
