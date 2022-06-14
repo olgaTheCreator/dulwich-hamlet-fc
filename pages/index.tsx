@@ -66,9 +66,25 @@ const Home: NextPage = () => {
         {/* <ParallaxLayer sticky={{ start: 1, end: 1.7 }}>
           <ChevronDownIcon className={styles["chevron-down-icon__blue"]} />
         </ParallaxLayer> */}
-        <ParallaxLayer offset={1.1} speed={0.8}>
+        <ParallaxLayer sticky={{ start: 1.1, end: 1.1 }}>
+          {/* offset={1} factor={1.15} speed={1.5}> */}
           <div className={styles["image-container--watch-us"]}>
             <WatchUsPlay />
+          </div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={1.65} speed={0.3}>
+          <div className={styles["background--triangles"]}></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={1.68} speed={0.2}>
+          <div className={styles["card--upcoming-matches"]}>
+            APRIL
+            <br />
+            SUNDAY 19TH
+            <br />
+            3.00 PM
+            <br />
+            VS CHELSEA
+            <br />
           </div>
         </ParallaxLayer>
 

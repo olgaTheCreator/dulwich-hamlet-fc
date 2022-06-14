@@ -128,6 +128,14 @@
   height: 150vh;
   background-size: cover;
 }
+
+.background--triangles {
+  width: 100vw;
+  height: 200vh;
+  background: url("../assets/svgs/bg_triangle_opt.svg") center top/ auto 100vh
+    repeat-y;
+}
+
 .image-container--girl {
   position: relative;
   width: 120vw;
@@ -144,6 +152,7 @@
   max-width: 700px;
   display: block;
   margin-left: var(--space-sm);
+  z-index: 10;
 }
 .background--photo {
   background: url("../public/girl.jpg") no-repeat top center;
@@ -187,6 +196,7 @@
   margin: 0.1em 0.1em 0 0;
   color: var(--blue);
   filter: drop-shadow(0.07em 0.07em 0.1em rgba(0, 0, 0, 0.4));
+  z-index: 99;
 }
 
 .scroll-down-p {
@@ -199,4 +209,15 @@
   float: right;
   color: var(--off-white);
   position: relative;
+}
+
+.card--upcoming-matches {
+  width: 90%;
+  height: fit-content;
+  background-color: rgba(255, 255, 255, 0.9);
+  margin: 0 auto;
+  color: #18173c;
+  text-align: center;
+  font-size: var(--font-size-xlg);
+  font-weight: 500;
 }
