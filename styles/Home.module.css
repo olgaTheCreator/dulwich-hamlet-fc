@@ -132,8 +132,8 @@
 .background--triangles {
   width: 100vw;
   height: 200vh;
-  background: url("../assets/svgs/bg_triangle_opt.svg") center top/ auto 100vh
-    repeat-y;
+  background: url("../assets/svgs/bg_triangle_1200.svg") center top/ auto 80vh
+    repeat;
 }
 
 .image-container--girl {

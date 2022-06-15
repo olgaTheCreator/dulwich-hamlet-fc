@@ -47,7 +47,7 @@ const Home: NextPage = () => {
             down
           </div>
         </ParallaxLayer>
-        <ParallaxLayer offset={0.22} speed={0.6}>
+        <ParallaxLayer offset={0.22} speed={2}>
           <div className={styles["image-container--girl"]}>
             <Girl />
             {/* <Image
