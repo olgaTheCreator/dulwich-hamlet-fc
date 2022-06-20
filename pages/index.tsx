@@ -10,7 +10,21 @@ import WatchUsPlay from "../assets/svgs/watch_us_play_poly.svg";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { ChevronDownIcon } from "@heroicons/react/outline";
 
-const Home: NextPage = () => {
+interface MatchesProps {
+  matches: Matches;
+}
+
+type Matches = Array<Match>;
+
+interface Match {
+  date: string;
+  oponnent: string;
+}
+
+const add = (a: number, b: number): number => a + b;
+
+const Home: NextPage<MatchesProps> = ({ matches }) => {
+  console.log(matches);
   // const [offsetY, setOffsetY] = useState(0);
   // const handleScroll = () => setOffsetY(window.pageYOffset);
 
@@ -31,7 +45,7 @@ const Home: NextPage = () => {
       </Head>
 
       <Parallax pages={4}>
-        <ParallaxLayer offset={0} speed={0.1}>
+        <ParallaxLayer offset={0} speed={0.9}>
           <div className={styles["background--pink"]}></div>
         </ParallaxLayer>
         <ParallaxLayer speed={0.4}>
@@ -40,7 +54,7 @@ const Home: NextPage = () => {
         <ParallaxLayer sticky={{ start: 0.2, end: 2.7 }}>
           <ChevronDownIcon className={styles["chevron-down-icon__blue"]} />
         </ParallaxLayer>
-        <ParallaxLayer offset={0.3}>
+        <ParallaxLayer offset={0.28}>
           <div className={styles["scroll-down-p"]}>
             Scroll
             <br />
@@ -66,17 +80,23 @@ const Home: NextPage = () => {
         {/* <ParallaxLayer sticky={{ start: 1, end: 1.7 }}>
           <ChevronDownIcon className={styles["chevron-down-icon__blue"]} />
         </ParallaxLayer> */}
-        <ParallaxLayer sticky={{ start: 1.1, end: 1.1 }}>
-          {/* offset={1} factor={1.15} speed={1.5}> */}
+        <ParallaxLayer
+          // sticky={{ start: 1.1, end: 1.1 }}>
+          offset={0.98}
+          factor={1.15}
+          speed={0.3}
+        >
           <div className={styles["image-container--watch-us"]}>
             <WatchUsPlay />
           </div>
         </ParallaxLayer>
-        <ParallaxLayer offset={1.65} speed={0.3}>
+        <ParallaxLayer offset={1.1} speed={0.3}>
           <div className={styles["background--triangles"]}></div>
         </ParallaxLayer>
-        <ParallaxLayer offset={1.68} speed={0.2}>
-          <div className={styles["card--upcoming-matches"]}>
+        <ParallaxLayer offset={1.18} speed={0.2}>
+          <Upcoming />
+          {/* <div className={styles["card--upcoming-matches"]}>
+            
             APRIL
             <br />
             SUNDAY 19TH
@@ -85,12 +105,11 @@ const Home: NextPage = () => {
             <br />
             VS CHELSEA
             <br />
-          </div>
+          </div> */}
         </ParallaxLayer>
-
+        {/* 
         <ParallaxLayer offset={3} factor={2} speed={0.6}>
-          <Upcoming />
-        </ParallaxLayer>
+        </ParallaxLayer> */}
       </Parallax>
 
       {/* <main className={styles.main}></main>
@@ -100,13 +119,22 @@ const Home: NextPage = () => {
   );
 };
 
+import fsPromises from "fs/promises";
+import path from "path";
+export async function getStaticProps() {
+  const filePath = path.join(
+    process.cwd(),
+    "/assets/data/upcomingMatches.json"
+  );
+  const jsonData = await fsPromises.readFile(filePath);
+  const matches = JSON.parse(jsonData.toString()) as Matches;
+  // const url = "../assets/data/upcomingMatches.json";
+  // const res = await fetch(url);
+  // const data = await res.json();
+
+  return {
+    props: { matches }, // will be passed to the page component as props
+  };
+}
+
 export default Home;
-
-// export async function getStaticProps() {
-//   const res = await fetch("../assets/data/upcomingMatches.json");
-//   const data = await res.json();
-
-//   return {
-//     props: { matches: data }, // will be passed to the page component as props
-//   };
-// }

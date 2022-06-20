@@ -1,32 +1,22 @@
 [
   {
-    "month": "april",
-    "date": "sunday 9th",
-    "time": "3.00 pm",
-    "vs": "vs aylesford"
+    "date": "2022-04-17 15:00",
+    "opponent": "Aylesford"
   },
   {
-    "month": "may",
-    "date": "saturday 29th",
-    "time": "11.00 am",
-    "vs": "vs new london lionesses"
+    "date": "2022-05-28 11:30",
+    "opponent": "New London Lionesses"
   },
   {
-    "month": "june",
-    "date": "tuesday 1st",
-    "time": "7.00 pm",
-    "vs": "vs fulham women fc"
+    "date": "2022-06-01 19:00",
+    "opponent": "Fulham Women FC"
   },
   {
-    "month": "june",
-    "date": "sunday 12th",
-    "time": "3.00 pm",
-    "vs": "vs worthing"
+    "date": "2022-06-12 15:00",
+    "opponent": "Worthing"
   },
   {
-    "month": "july",
-    "date": "saturday 18th",
-    "time": "12.00 pm",
-    "vs": "vs aylesford"
+    "date": "2022-07-16 12:00",
+    "opponent": "Aylesford"
   }
 ]
