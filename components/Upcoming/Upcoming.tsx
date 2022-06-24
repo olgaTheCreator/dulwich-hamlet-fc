@@ -1,10 +1,10 @@
 import styles from "./Upcoming.module.css";
 
-const Upcoming = () => {
+const Upcoming = ({ matches }) => {
   return (
     <div className={styles.container}>
-      <div className={styles.container__bg}>
-        {/* <Header /> */}
+      {/* <div className={styles.container__bg}>
+
         <div className={styles.transbox}>
           <h1 className={styles.transbox__bg}>
             WATCH <br />
@@ -34,7 +34,7 @@ const Upcoming = () => {
             <p className={styles.transbox__text}> VS AYLESFORD</p>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

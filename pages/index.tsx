@@ -44,7 +44,7 @@ const Home: NextPage<MatchesProps> = ({ matches }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Parallax pages={4}>
+      <Parallax pages={4} style={{ maxWidth: "1600px" }}>
         <ParallaxLayer offset={0} speed={0.9}>
           <div className={styles["background--pink"]}></div>
         </ParallaxLayer>
@@ -90,11 +90,11 @@ const Home: NextPage<MatchesProps> = ({ matches }) => {
             <WatchUsPlay />
           </div>
         </ParallaxLayer>
-        <ParallaxLayer offset={1.1} speed={0.3}>
+        <ParallaxLayer offset={1.1} speed={0.4}>
           <div className={styles["background--triangles"]}></div>
         </ParallaxLayer>
         <ParallaxLayer offset={1.18} speed={0.2}>
-          <Upcoming />
+          <Upcoming matches={matches} />
           {/* <div className={styles["card--upcoming-matches"]}>
             
             APRIL
