@@ -9,22 +9,15 @@ import Girl from "../public/girl.svg";
 import WatchUsPlay from "../assets/svgs/watch_us_play_poly.svg";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { ChevronDownIcon } from "@heroicons/react/outline";
+import { Matches } from "../types/globals";
+
+const add = (a: number, b: number): number => a + b;
 
 interface MatchesProps {
   matches: Matches;
 }
 
-type Matches = Array<Match>;
-
-interface Match {
-  date: string;
-  oponnent: string;
-}
-
-const add = (a: number, b: number): number => a + b;
-
 const Home: NextPage<MatchesProps> = ({ matches }) => {
-  console.log(matches);
   // const [offsetY, setOffsetY] = useState(0);
   // const handleScroll = () => setOffsetY(window.pageYOffset);
 
@@ -45,7 +38,7 @@ const Home: NextPage<MatchesProps> = ({ matches }) => {
       </Head>
 
       <Parallax pages={4} style={{ maxWidth: "1600px" }}>
-        <ParallaxLayer offset={0} speed={0.9}>
+        <ParallaxLayer offset={0} speed={0.9} factor={1.2}>
           <div className={styles["background--pink"]}></div>
         </ParallaxLayer>
         <ParallaxLayer speed={0.4}>
@@ -90,10 +83,10 @@ const Home: NextPage<MatchesProps> = ({ matches }) => {
             <WatchUsPlay />
           </div>
         </ParallaxLayer>
-        <ParallaxLayer offset={1.1} speed={0.4}>
+        <ParallaxLayer offset={1.1} speed={0.4} factor={1.5}>
           <div className={styles["background--triangles"]}></div>
         </ParallaxLayer>
-        <ParallaxLayer offset={1.18} speed={0.2}>
+        <ParallaxLayer offset={1.18} speed={0.2} factor={1.5}>
           <Upcoming matches={matches} />
           {/* <div className={styles["card--upcoming-matches"]}>
             

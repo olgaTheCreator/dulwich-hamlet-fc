@@ -133,7 +133,7 @@
   width: 100%;
   height: 200vh;
   background: url("../assets/svgs/bg_triangle_1200.svg") center top/ auto 80vh
-    no-repeat;
+    repeat;
 }
 
 .image-container--girl {
