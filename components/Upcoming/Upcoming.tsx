@@ -60,63 +60,26 @@ const dateToString = (date: Date): MatchDate => {
 };
 
 const displayingMatches = (arr: Matches) => {
-  const newArr = arr.map((a: Match, i: number) => ({
-    ...dateToString(new Date(a.date)),
-    opponent: a.opponent,
+  const newArr = arr.map(({ date, opponent }: Match) => ({
+    ...dateToString(new Date(date)),
+    opponent,
   }));
-  return newArr.map((a, i) => (
+  return newArr.map(({ month, day, time, opponent }, i) => (
     <div className={styles["card--upcoming-matches"]} key={i + 1}>
-      {a.month}
+      {month}
       <br />
-      {a.day}
+      {day}
       <br />
-      {a.time}
+      {time}
       <br />
-      vs {a.opponent}
+      vs {opponent}
     </div>
   ));
 };
 
 const Upcoming: React.FC<UpcomingProps> = ({ matches }) => {
   console.log(matches);
-  return (
-    <div className={styles.container}>
-      {displayingMatches(matches)}
-
-      {/* <div className={styles.container__bg}>
-
-        <div className={styles.transbox}>
-          <h1 className={styles.transbox__bg}>
-            WATCH <br />
-            US <br /> PLAY:
-          </h1>{" "}
-          <div>
-            <p className={styles.transbox__text}>APRIL</p>
-            <p className={styles["transbox__text--bold"]}>SUNDAY 9TH</p>
-            <p className={styles.transbox__text}>3.00 PM</p>
-
-            <p className={styles.transbox__text}>VS AYLESFORD</p>
-          </div>
-          <div>
-            <p className={styles.transbox__text}>29TH MAY </p>
-            <p className={styles.transbox__text}>VS NEW LONDON LIONESSES</p>
-          </div>
-          <div>
-            <p className={styles.transbox__text}>1ST JUNE </p>
-            <p className={styles.transbox__text}> VS FULHAM WOMEN FC</p>
-          </div>
-          <div>
-            <p className={styles.transbox__text}>15TH JUNE </p>
-            <p className={styles.transbox__text}> VS WORTHING</p>
-          </div>
-          <div>
-            <p className={styles.transbox__text}>18TH JULY </p>
-            <p className={styles.transbox__text}> VS AYLESFORD</p>
-          </div>
-        </div>
-      </div> */}
-    </div>
-  );
+  return <div className={styles.container}>{displayingMatches(matches)}</div>;
 };
 
 export default Upcoming;

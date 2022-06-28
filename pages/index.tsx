@@ -86,20 +86,16 @@ const Home: NextPage<MatchesProps> = ({ matches }) => {
         <ParallaxLayer offset={1.1} speed={0.4} factor={1.5}>
           <div className={styles["background--triangles"]}></div>
         </ParallaxLayer>
+        <ParallaxLayer offset={2.8} speed={0.8}>
+          <div className={styles["background--poly"]}></div>
+        </ParallaxLayer>
         <ParallaxLayer offset={1.18} speed={0.2} factor={1.5}>
           <Upcoming matches={matches} />
-          {/* <div className={styles["card--upcoming-matches"]}>
-            
-            APRIL
-            <br />
-            SUNDAY 19TH
-            <br />
-            3.00 PM
-            <br />
-            VS CHELSEA
-            <br />
-          </div> */}
         </ParallaxLayer>
+        <ParallaxLayer offset={3.5} speed={0.6}>
+          <div className={styles["results-table"]}></div>
+        </ParallaxLayer>
+
         {/* 
         <ParallaxLayer offset={3} factor={2} speed={0.6}>
         </ParallaxLayer> */}

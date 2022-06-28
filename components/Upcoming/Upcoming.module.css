@@ -3,7 +3,7 @@
   height: 100%;
 }
 .card--upcoming-matches {
-  width: 80%;
+  width: 90%;
   height: fit-content;
   background-color: rgba(255, 255, 255, 0.9);
   margin: var(--space-lg) auto;
@@ -13,82 +13,20 @@
   font-weight: 500;
 }
 
-/* .container__bg {
-  background: url("../../public/girl.jpg") no-repeat top center;
-  background-blend-mode: multiply;
-  max-width: 100vw;
-  height: 100vh;
-  background-size: cover;
-}
-.container__bg::before {
-  content: "";
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  background-color: var(--dark-overlay);
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
-} */
-.transbox {
-  position: relative;
-  opacity: 1;
-  padding-top: var(--space-md);
-  padding-right: var(--space-md);
-  font-size: var(--font-size-md);
-  color: var(--off-white);
-}
-.transbox__bg {
-  background-color: var(--blue-trans);
-  background-size: contain;
-  padding: var(--space-sm);
-}
-.transbox h1 {
-  display: inline-block;
-  position: relative;
-  padding-left: var(--space-md);
-  margin-left: var(--space-lg);
-  margin-top: 6rem;
+@media screen and (min-width: 30em) {
+  .card--upcoming-matches {
+    width: 90%;
+  }
 }
 
-.transbox div {
-  padding: var(--space-sm) var(--space-md);
-  display: flex;
-  row-gap: 0.1rem;
-  flex-direction: column;
-  align-items: center;
-  font-size: var(--font-size-lg);
-  text-align: center;
-
-  margin-top: var(--space-sm);
-  margin-left: 10%;
-}
-.transbox__text {
-  background-color: var(--blue-trans);
-  display: inline-block;
-  box-shadow: 0 0.1rem 0 var(--blue-trans);
-  margin: 0 0;
-  padding: 0.2em 0.8em;
+@media screen and (min-width: 60em) {
+  .card--upcoming-matches {
+    width: 80%;
+  }
 }
 
-.transbox__text--bold {
-  background-color: var(--blue-trans);
-  display: inline-block;
-  box-shadow: 0 0.1rem 0 var(--blue-trans);
-  margin: 0 0;
-  padding: 0.15em 0.8em;
-  font-weight: 900;
-}
-
-.transbox__date {
-  justify-self: end;
-  grid-column: 1/2;
-  grid-row: 1/2;
-  font-size: var(--font-size-md);
-  font-weight: 900;
-}
-.transbox__place {
-  grid-column: 3/4;
-  grid-row: 1/3;
-  font-weight: 300;
+@media screen and (min-width: 90em) {
+  .card--upcoming-matches {
+    width: 70%;
+  }
 }

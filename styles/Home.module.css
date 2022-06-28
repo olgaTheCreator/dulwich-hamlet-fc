@@ -118,7 +118,7 @@
 .background--pink {
   background-color: var(--pink);
   max-width: 100vw;
-  height: 100vh;
+  height: 110vh;
   background-size: cover;
 }
 
@@ -135,7 +135,19 @@
   background: url("../assets/svgs/bg_triangle_1200.svg") center top/ auto 80vh
     repeat;
 }
+.background--poly {
+  width: 100%;
+  height: 200vh;
+  background: url("../assets/svgs/low-poly-grid.svg") center top/ auto 100vh
+    repeat;
+}
 
+.results-table {
+  background: url("../public/table_sm.png") no-repeat top center;
+  /* max-width: 100vw;
+  min-height: 100vh; */
+  background-size: cover;
+}
 .image-container--girl {
   position: relative;
   width: 120vw;
