@@ -122,10 +122,17 @@
   background-size: cover;
 }
 
+.background--pink-halftones {
+  width: 100%;
+  height: 200vh;
+  background: url("../assets/svgs/pinkHalftones.svg") center top/ auto 165vh
+    repeat-x;
+}
+
 .background--white {
   background-color: var(--off-white);
   max-width: 100vw;
-  height: 150vh;
+  height: 170vh;
   background-size: cover;
 }
 

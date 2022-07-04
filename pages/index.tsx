@@ -39,7 +39,7 @@ const Home: NextPage<MatchesProps> = ({ matches }) => {
 
       <Parallax pages={4} style={{ maxWidth: "1600px" }}>
         <ParallaxLayer offset={0} speed={0.9} factor={1.2}>
-          <div className={styles["background--pink"]}></div>
+          <div className={styles["background--pink-halftones"]}></div>
         </ParallaxLayer>
         <ParallaxLayer speed={0.4}>
           <Header />
@@ -86,9 +86,7 @@ const Home: NextPage<MatchesProps> = ({ matches }) => {
         <ParallaxLayer offset={1.1} speed={0.4} factor={1.5}>
           <div className={styles["background--triangles"]}></div>
         </ParallaxLayer>
-        <ParallaxLayer offset={2.8} speed={0.8}>
-          <div className={styles["background--poly"]}></div>
-        </ParallaxLayer>
+        <ParallaxLayer offset={2.8} speed={0.8}></ParallaxLayer>
         <ParallaxLayer offset={1.18} speed={0.2} factor={1.5}>
           <Upcoming matches={matches} />
         </ParallaxLayer>
