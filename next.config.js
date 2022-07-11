@@ -3,9 +3,16 @@ const nextConfig = {
   reactStrictMode: true,
 };
 
-module.exports = nextConfig;
-
 module.exports = {
+  nextConfig,
+  images: {
+    domains: ["pbs.twimg.com"],
+  },
+  experimental: {
+    images: {
+      allowFutureImage: true,
+    },
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,

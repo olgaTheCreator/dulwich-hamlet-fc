@@ -10,14 +10,17 @@ import WatchUsPlay from "../assets/svgs/watch_us_play_poly.svg";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { ChevronDownIcon } from "@heroicons/react/outline";
 import { Matches } from "../types/globals";
+import { getTimeline } from "../utils/TwitterApi/TwitterApi";
+import { Tweet } from "../components/Tweet/Tweet";
 
 const add = (a: number, b: number): number => a + b;
 
 interface MatchesProps {
   matches: Matches;
+  tweets: any;
 }
 
-const Home: NextPage<MatchesProps> = ({ matches }) => {
+const Home: NextPage<MatchesProps> = ({ matches, tweets }) => {
   // const [offsetY, setOffsetY] = useState(0);
   // const handleScroll = () => setOffsetY(window.pageYOffset);
 
@@ -26,6 +29,7 @@ const Home: NextPage<MatchesProps> = ({ matches }) => {
 
   //   return () => window.removeEventListener("scroll", handleScroll);
   // }, []);
+  console.log(tweets);
   return (
     <div className={styles.container}>
       <Head>
@@ -93,6 +97,13 @@ const Home: NextPage<MatchesProps> = ({ matches }) => {
         <ParallaxLayer offset={3.5} speed={0.6}>
           <div className={styles["results-table"]}></div>
         </ParallaxLayer>
+        <ParallaxLayer>
+          {/* <div>
+            {tweets.map((tweet) => (
+              <Tweet key={tweet.id} {...tweet} />
+            ))}
+          </div> */}
+        </ParallaxLayer>
 
         {/* 
         <ParallaxLayer offset={3} factor={2} speed={0.6}>
@@ -118,10 +129,10 @@ export async function getStaticProps() {
   // const url = "../assets/data/upcomingMatches.json";
   // const res = await fetch(url);
   // const data = await res.json();
+  const tweets = await getTimeline();
 
   return {
-    props: { matches }, // will be passed to the page component as props
+    props: { matches, tweets }, // will be passed to the page component as props
   };
 }
-
 export default Home;
