@@ -23,6 +23,7 @@ interface MatchesProps {
 
 const Home: NextPage<MatchesProps> = ({ matches, tweets }) => {
   console.log(tweets);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -33,54 +34,56 @@ const Home: NextPage<MatchesProps> = ({ matches, tweets }) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <Parallax translateY={[20, 90]}>
+      <div
+        className={styles["background--pink-halftones"]}
+        style={{ backgroundPositionY: useScrollPosition(-0.5) }}
+      >
         <Header />
-        <div className={styles["background--pink-halftones"]}></div>
-      </Parallax>
-      <Parallax>
-        <ChevronDownIcon className={styles["chevron-down-icon__blue"]} />
-      </Parallax>
-      <Parallax>
+        <div>
+          <ChevronDownIcon
+            className={styles["chevron-down-icon__blue"]}
+            style={{ transform: `translateY(${useScrollPosition(1.5)}px) ` }}
+          />
+        </div>
         <div className={styles["scroll-down-p"]}>
           Scroll
           <br />
           down
         </div>
-      </Parallax>
-      <Parallax speed={510}>
         <div className={styles["image-container--girl"]}>
-          <Girl />
+          <Girl
+            style={{ transform: `translateY(${useScrollPosition(-2)}px) ` }}
+          />
           {/* <Image
-              src="/../public/girl.svg"
-              alt="player holding a ball"ata) => {
-  const au
-              quality={100}
-            /> */}
+                src="/../public/girl.svg"
+                alt="player holding a ball"
+                quality={100}
+                layout="fill"
+              /> */}
         </div>
-      </Parallax>
-      {/* <Parallax offset={1} speed={1}>
-          <div className={styles["background--white"]}></div>
-        </Parallax> */}
-      {/* <Parallax sticky={{ start: 1, end: 1.7 }}>
-          <ChevronDownIcon className={styles["chevron-down-icon__blue"]} />
-        </Parallax> */}
-      <Parallax speed={0.3}>
-        <div className={styles["image-container--watch-us"]}>
-          <WatchUsPlay />
-        </div>
-      </Parallax>
-      <Parallax speed={0.4}>
-        <div className={styles["background--triangles"]}></div>
-      </Parallax>
-      <Parallax speed={0.2}>
+      </div>
+
+      <div className={styles["image-container--watch-us"]}>
+        <WatchUsPlay
+          style={{
+            transform: `translate(${useScrollPosition(
+              0.05
+            )}px, ${useScrollPosition(-1)}px) `,
+          }}
+        />
+      </div>
+
+      <div
+        className={styles["background--triangles"]}
+        style={{ transform: `translateY(${useScrollPosition(-0.8)}px) ` }}
+        // style={{ backgroundPositionY: useScrollPosition(-1.5) }}
+      >
         <Upcoming matches={matches} />
-      </Parallax>
-      <Parallax>
-        {tweets.map((tweet: TweetData) => (
-          <Tweet key={tweet.id} {...tweet} />
-        ))}
-      </Parallax>
+      </div>
+
+      {tweets.map((tweet: TweetData) => (
+        <Tweet key={tweet.id} {...tweet} />
+      ))}
 
       {/* 
         <Parallax offset={3} factor={2} speed={0.6}>
@@ -95,6 +98,7 @@ const Home: NextPage<MatchesProps> = ({ matches, tweets }) => {
 
 import fsPromises from "fs/promises";
 import path from "path";
+import { useScrollPosition } from "../utils/hooks/useScrollPosition";
 export async function getStaticProps() {
   const filePath = path.join(
     process.cwd(),
