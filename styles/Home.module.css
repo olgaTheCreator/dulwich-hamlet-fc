@@ -123,6 +123,7 @@
 }
 
 .background--pink-halftones {
+  position: relative;
   width: 100%;
   height: 200vh;
   background: url("../assets/svgs/pinkHalftones.svg") center top/ auto 165vh
