@@ -12,6 +12,7 @@ import { ChevronDownIcon } from "@heroicons/react/outline";
 import { Matches } from "../types/globals";
 import { getTimeline } from "../utils/TwitterApi/TwitterApi";
 import { Tweet } from "../components/Tweet/Tweet";
+import { TweetData } from "../utils/TwitterApi/Types";
 
 const add = (a: number, b: number): number => a + b;
 
@@ -63,10 +64,8 @@ const Home: NextPage<MatchesProps> = ({ matches, tweets }) => {
             <Girl />
             {/* <Image
               src="/../public/girl.svg"
-              alt="player holding a ball"
-              layout="fill"
-              objectFit="contain"
-              objectPosition="top left"
+              alt="player holding a ball"ata) => {
+  const au
               quality={100}
             /> */}
           </div>
@@ -94,15 +93,10 @@ const Home: NextPage<MatchesProps> = ({ matches, tweets }) => {
         <ParallaxLayer offset={1.18} speed={0.2} factor={1.5}>
           <Upcoming matches={matches} />
         </ParallaxLayer>
-        <ParallaxLayer offset={3.5} speed={0.6}>
-          <div className={styles["results-table"]}></div>
-        </ParallaxLayer>
-        <ParallaxLayer>
-          {/* <div>
-            {tweets.map((tweet) => (
-              <Tweet key={tweet.id} {...tweet} />
-            ))}
-          </div> */}
+        <ParallaxLayer offset={3}>
+          {tweets.map((tweet: TweetData) => (
+            <Tweet key={tweet.id} {...tweet} />
+          ))}
         </ParallaxLayer>
 
         {/* 
