@@ -39,7 +39,7 @@ const Home: NextPage<MatchesProps> = ({ matches, tweets }) => {
         style={{ backgroundPositionY: useScrollPosition(-0.5) }}
       >
         <Header />
-        <div>
+        <div style={{ display: "grid" }}>
           <ChevronDownIcon
             className={styles["chevron-down-icon__blue"]}
             style={{ transform: `translateY(${useScrollPosition(1.5)}px) ` }}
@@ -52,7 +52,9 @@ const Home: NextPage<MatchesProps> = ({ matches, tweets }) => {
         </div>
         <div className={styles["image-container--girl"]}>
           <Girl
-            style={{ transform: `translateY(${useScrollPosition(-2)}px) ` }}
+            style={{
+              transform: `translateY(${useScrollPosition(-2)}px)`,
+            }}
           />
           {/* <Image
                 src="/../public/girl.svg"
@@ -68,14 +70,16 @@ const Home: NextPage<MatchesProps> = ({ matches, tweets }) => {
           style={{
             transform: `translate(${useScrollPosition(
               0.05
-            )}px, ${useScrollPosition(-1)}px) `,
+            )}px, ${useScrollPosition(-1.2)}px) `,
           }}
         />
       </div>
 
       <div
         className={styles["background--triangles"]}
-        style={{ transform: `translateY(${useScrollPosition(-0.8)}px) ` }}
+        style={{
+          transform: `translateY(${useScrollPosition(-1)}px)`,
+        }}
         // style={{ backgroundPositionY: useScrollPosition(-1.5) }}
       >
         <Upcoming matches={matches} />
